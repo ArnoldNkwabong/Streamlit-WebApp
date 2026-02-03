@@ -1,5 +1,5 @@
 import streamlit as st
-import leafmap.maplibregl as leafmap
+import leafmap.folium as leafmap
 
 st.set_page_config(page_title='My Webpage', page_icon=':tada:', layout='wide')
 
@@ -32,5 +32,6 @@ m = leafmap.Map()
         m.add_legend(title="ESA Land Cover", builtin_legend="ESA_WorldCover")
 
 m.to_streamlit(height=700)
+
 
 
