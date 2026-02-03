@@ -1,4 +1,5 @@
 import streamlit as st
+import leafmap.maplibregl as leafmap
 
 st.set_page_config(page_title='My Webpage', page_icon=':tada:', layout='wide')
 
@@ -23,3 +24,9 @@ st.markdown(
 )
 
 st.header("Instructions")
+
+m = leafmap.Map(
+    center=[-122.19861, 46.21168], zoom=13, pitch=60, bearing=150, style="3d-terrain", projection='globe')
+m.add_layer_control(bg_layers=True)
+# m.to_html("terrain.html", title="Awesome 3D Map", width="100%", height="100%", replace_key=False)
+m.to_streamlit(height=700)
