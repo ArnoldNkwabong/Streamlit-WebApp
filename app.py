@@ -22,16 +22,12 @@ st.markdown(
     This multipage app template demonstrates various interactive web apps created using [streamlit](https://streamlit.io) and [leafmap](https://leafmap.org). It is an open-source project and you are very welcome to contribute to the [GitHub repository](https://github.com/giswqs/streamlit-multipage-template).
     """
 )
-
 st.header("Instructions")
-
 m = leafmap.Map()
-m.split_map(
-    left_layer="ESA WorldCover 2020 S2 FCC", right_layer="ESA WorldCover 2020"
-)
+m.split_map(left_layer="ESA WorldCover 2020 S2 FCC", right_layer="ESA WorldCover 2020")
 m.add_legend(title="ESA Land Cover", builtin_legend="ESA_WorldCover")
-
 m.to_streamlit(height=700)
+
 
 
 
