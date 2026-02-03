@@ -25,9 +25,12 @@ st.markdown(
 
 st.header("Instructions")
 
-m = leafmap.Map(
-    center=[-122.19861, 46.21168], zoom=13, pitch=60, bearing=150, style="3d-terrain")
-m.add_layer_control(bg_layers=True)
-# m.to_html("terrain.html", title="Awesome 3D Map", width="100%", height="100%", replace_key=False)
+m = leafmap.Map()
+        m.split_map(
+            left_layer="ESA WorldCover 2020 S2 FCC", right_layer="ESA WorldCover 2020"
+        )
+        m.add_legend(title="ESA Land Cover", builtin_legend="ESA_WorldCover")
+
 m.to_streamlit(height=700)
+
 
